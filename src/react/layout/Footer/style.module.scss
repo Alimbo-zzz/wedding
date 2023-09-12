@@ -1,0 +1,29 @@
+.arrow {
+	margin: 2em auto;
+	width: 4em;
+	aspect-ratio: 1/1;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer {
+	background: $grad-1;
+	padding: 2em 0;
+
+
+
+	&__grid {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1em;
+	}
+
+	&__created {
+		color: $title-color-inverse;
+		font-family: "Bellota";
+	}
+}
