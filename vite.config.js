@@ -6,6 +6,7 @@ import { resolve } from 'path';
 const src = resolve(__dirname, './src');
 
 export default defineConfig({
+  base: '/wedding/',
   plugins: [
     react(),
     legacy({ targets: ['IE >= 11'] }),
