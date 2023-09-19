@@ -18,7 +18,7 @@ const Timer = ({ className = '' }) => {
 
 
 	function getTime(nowDate, type) {
-		const deadline = new Date(2023, 10, 10);
+		const deadline = new Date(2023, 10, 15);
 		const diff = new Date(deadline - new Date());
 		let result = '';
 
@@ -38,7 +38,7 @@ const Timer = ({ className = '' }) => {
 
 	return (<>
 		<ul className={classNames([className, cls.timer])}>
-			{items.map(el => (<li key={el.value} className={cls.timer__item}>
+			{items.map((el, i) => (<li data-aos-delay={(i + 2) * 100} data-aos='flip-left' key={el.value} className={cls.timer__item}>
 				<strong>{getTime(time, el.value)}</strong>
 				<small>{el.name}</small>
 			</li>))}

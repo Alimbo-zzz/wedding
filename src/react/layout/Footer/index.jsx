@@ -8,14 +8,14 @@ import img_arrow from '@icons/arrow-top.svg';
 const Footer = (props) => {
 
 	return (<>
-		<div className={cls.arrow}><img src={img_arrow} /></div>
+		<a href='#top' className={cls.arrow}><img src={img_arrow} /></a>
 		<footer className={cls.footer}>
 			<div className={classNames(['container', cls.footer__grid])}>
 				<Newlyweds />
 				<div className={cls.footer__created}>
 					Invitation site © 2023 г.
 				</div>
-				<img src={img_decor} className={cls.footer__decor} />
+				<img data-aos='zoom-out' src={img_decor} className={cls.footer__decor} />
 			</div>
 		</footer>
 	</>);

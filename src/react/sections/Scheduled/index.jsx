@@ -38,9 +38,9 @@ const Scheduled = (props) => {
 	return (<>
 		<section id="sec-scheduled" className={cls.scheduled}>
 			<div className={classNames(['container', cls.scheduled__grid])}>
-				<h2 className='title'>ПРОГРАММА СВАДЕБНОГО ДНЯ</h2>
+				<h2 className='title' data-aos="zoom-out" >ПРОГРАММА СВАДЕБНОГО ДНЯ</h2>
 				<ul className={cls.scheduled__list}>
-					{data.map((el, i) => (<li key={i} className={cls.scheduled__item}>
+					{data.map((el, i) => (<li key={i} data-aos="zoom-out" data-aos-delay={(i + 1) * 100} className={cls.scheduled__item}>
 						<div className={cls.scheduled__title}>{el.title}</div>
 						<div className={cls.scheduled__time}>{el.time}</div>
 						<div className={cls.scheduled__description}>{el.description}</div>

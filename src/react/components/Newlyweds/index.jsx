@@ -6,7 +6,7 @@ import heart from '@icons/heart.svg';
 const Newlyweds = ({ className = '' }) => {
 
 	return (<>
-		<div className={classNames([className, cls.newlyweds])}>
+		<div data-aos="zoom-out" className={classNames([className, cls.newlyweds])}>
 			Ахмед
 			<img src={heart} />
 			Регина
