@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react';
 import cls from './style.module.scss'
 
 const Timer = ({ className = '' }) => {
-	const [time, setTime] = useState(new Date());
+	const [finishTime] = useState(1697364000000);
+	const [diff, setDiff] = useState([0, 0, 0, 0]);
+	const [tick, setTick] = useState(false);
 	const items = [
 		{ value: 'day', name: 'дней' },
 		{ value: 'hour', name: 'часов' },
@@ -11,35 +13,33 @@ const Timer = ({ className = '' }) => {
 		{ value: 'sec', name: 'секунд' },
 	];
 
+
+
 	useEffect(() => {
-		const secondInterval = setInterval(() => setTime(new Date()), 1000);
-		return () => { clearInterval(secondInterval); }
-	}, [])
+		const diff = (finishTime - new Date()) / 1000;
+		if (diff < 0) return // время вышло
+		setDiff([
+			Math.floor(diff / 86400), // дни
+			Math.floor((diff / 3600) % 24),
+			Math.floor((diff / 60) % 60),
+			Math.floor(diff % 60)
+		])
+	}, [tick, finishTime])
+
+	useEffect(() => {
+		const timerID = setInterval(() => setTick(!tick), 1000);
+		return () => clearInterval(timerID);
+	}, [tick])
 
 
-	function getTime(nowDate, type) {
-		const deadline = new Date(1697364000000);
-		const diff = new Date(deadline - new Date());
-		let result = '';
+	const getStrTime = (value) => String(value).padStart(2, '0');
 
-		let day = String(diff.getDate() - 1).padStart(2, '0');
-		let hour = String(diff.getHours() - 3).padStart(2, '0');
-		let min = String(diff.getMinutes()).padStart(2, '0');
-		let sec = String(diff.getSeconds()).padStart(2, '0');
-
-		(type === 'day') && (result = day);
-		(type === 'hour') && (result = hour);
-		(type === 'min') && (result = min);
-		(type === 'sec') && (result = sec);
-
-		return result;
-	}
 
 
 	return (<>
 		<ul className={classNames([className, cls.timer])}>
 			{items.map((el, i) => (<li data-aos-delay={(i + 2) * 100} data-aos='flip-left' key={el.value} className={cls.timer__item}>
-				<strong>{getTime(time, el.value)}</strong>
+				<strong>{getStrTime(diff[i])}</strong>
 				<small>{el.name}</small>
 			</li>))}
 		</ul>
