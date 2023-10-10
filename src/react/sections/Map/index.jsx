@@ -2,7 +2,6 @@ import React from 'react';
 import cls from './style.module.scss'
 import classNames from 'classnames';
 import img_mark from '@icons/map-mark.svg';
-import img_map from '@images/map.png';
 
 import { MapContainer, TileLayer, useMap, Popup, Marker } from 'react-leaflet';
 
