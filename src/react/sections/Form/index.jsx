@@ -50,11 +50,11 @@ const Form = (props) => {
 			<div className={classNames(["container", cls.form__cont])}>
 				<h2 className='title _w' data-aos="zoom-out">ФОРМА ЗАПИСИ</h2>
 				<form ref={formRef} autoComplete='off' className={cls.form__grid} onSubmit={sendRequest}>
-					<input required autoComplete='off' type="text" name='name' placeholder='Введите ваше имя и фамилию' />
-					<InputMask value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} required mask="+7(999) 999 99-99" placeholder='Введите номер телефона' name='phone' type='tel' />
+					<input required autoComplete='new-password' type="text" name='name' placeholder='Введите ваше имя и фамилию' />
+					<InputMask maskChar={null} value={phoneNumber} autoComplete='new-password' onChange={e => setPhoneNumber(e.target.value)} required mask="+7(999) 999 99-99" placeholder='Введите номер телефона' name='phone' type='tel' />
 					<label>
 						<p>Доп. информация</p>
-						<textarea autoComplete='off' name='message' maxLength={800} placeholder='Можете перечислить людей с которыми вы явитесь или указать что-нибудь важное'></textarea>
+						<textarea autoComplete='new-password' name='message' maxLength={800} placeholder='Можете перечислить людей с которыми вы явитесь или указать что-нибудь важное'></textarea>
 					</label>
 					<button type='submit' disabled={requestLoad} className={cls.form__button}>Отправить</button>
 				</form>
