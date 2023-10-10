@@ -6,33 +6,19 @@ import item_decor from '@icons/leaves.svg';
 const Scheduled = (props) => {
 	const data = [
 		{
-			title: 'Сбор гостей с ресторане',
-			description: 'Присутствие по желанию',
-			address: 'Россия, Нальчик, ул. Пушкина 100',
-			time: '12:00',
-			link: 'https://address.com'
+			title: 'Вывод невесты',
+			description: 'Ресторан «Эльбрус»',
+			address: 'Россия, Нальчик, Городской парк',
+			time: '13:00',
+			link: 'https://yandex.ru/maps/-/CDaQbO3~'
 		},
 		{
-			title: 'Сбор гостей с ресторане',
-			description: 'Присутствие по желанию',
-			address: 'Россия, Нальчик, ул. Пушкина 100',
-			time: '12:00',
-			link: 'https://address.com'
-		},
-		{
-			title: 'Сбор гостей с ресторане',
-			description: 'Присутствие по желанию',
-			address: 'Россия, Нальчик, ул. Пушкина 100',
-			time: '12:00',
-			link: 'https://address.com'
-		},
-		{
-			title: 'Сбор гостей с ресторане',
-			description: 'Присутствие по желанию',
-			address: 'Россия, Нальчик, ул. Пушкина 100',
-			time: '12:00',
-			link: 'https://address.com'
-		},
+			title: 'Торжественная церемония',
+			description: 'Ресторан «Bridge»',
+			address: 'Россия, Нальчик, ул. Идарова, 2Б',
+			time: '17:00',
+			link: 'https://yandex.ru/maps/-/CDaQbSnp'
+		}
 	]
 
 	return (<>

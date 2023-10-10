@@ -18,12 +18,12 @@ const Timer = ({ className = '' }) => {
 
 
 	function getTime(nowDate, type) {
-		const deadline = new Date(2023, 10, 15);
+		const deadline = new Date(1697364000000);
 		const diff = new Date(deadline - new Date());
 		let result = '';
 
-		let day = String(diff.getDate()).padStart(2, '0');
-		let hour = String(diff.getHours()).padStart(2, '0');
+		let day = String(diff.getDate() - 1).padStart(2, '0');
+		let hour = String(diff.getHours() - 3).padStart(2, '0');
 		let min = String(diff.getMinutes()).padStart(2, '0');
 		let sec = String(diff.getSeconds()).padStart(2, '0');
 

@@ -1,14 +1,15 @@
 body {
 	min-width: $min-width;
 	font-family: 'Raleway', 'Tahoma', 'Vardana';
-	overflow-x: hidden;
 }
 
 * {
 	scroll-behavior: smooth;
 }
 
-
+.wrapper {
+	overflow-x: hidden;
+}
 
 .container {
 	max-width: $min-width;

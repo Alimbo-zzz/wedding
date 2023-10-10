@@ -9,7 +9,7 @@ import { MapContainer, TileLayer, useMap, Popup, Marker } from 'react-leaflet';
 
 
 const MapPreview = (props) => {
-	const position = [43.47508673024159, 43.60415717902467];
+	const position = [43.487161, 43.643199];
 
 	return (<>
 		<MapContainer center={position} zoom={17} scrollWheelZoom={false}>
@@ -33,10 +33,10 @@ const Map = (props) => {
 	return (<>
 		<section id='sec-map' className={cls.map}>
 			<div className={classNames(['container', cls.map__grid])}>
-				<h2 className='title' data-aos="zoom-out">СВАДЕБНЫЙ УЖИН</h2>
+				<h2 className='title' data-aos="zoom-out">ОСНОВНАЯ ЦЕРЕМОНИЯ</h2>
 				<img src={img_mark} data-aos="zoom-out" />
-				<h3>Ресторан</h3>
-				<p className='text'>Россия, Нальчик, ул. Ленина 100</p>
+				<h3>Ресторан «Bridge»</h3>
+				<p className='text'>Россия, Нальчик, ул. Идарова, 2Б</p>
 			</div>
 			<div className={cls.map__preview}>
 				<MapPreview />
